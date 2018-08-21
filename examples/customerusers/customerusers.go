@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	sendbirdclient "github.com/blazingorb/sendbirdclient"
+	sendbirdclient "github.com/bdrobinson/sendbirdclient"
 )
 
 const (

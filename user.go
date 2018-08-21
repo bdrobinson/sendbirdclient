@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/blazingorb/sendbirdclient/templates"
+	"github.com/bdrobinson/sendbirdclient/templates"
 )
 
 type User struct {

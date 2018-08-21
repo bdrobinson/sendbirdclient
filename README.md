@@ -1,7 +1,7 @@
 Sendbird Client Package for Golang
 ==================================
-[![Drone Build Status](https://droneci.blazingorb.com/api/badges/blazingorb/sendbirdclient/status.svg)](https://droneci.blazingorb.com/blazingorb/sendbirdclient)
-[![Go Report Card](https://goreportcard.com/badge/github.com/blazingorb/sendbirdclient)](https://goreportcard.com/report/github.com/blazingorb/sendbirdclient)
+[![Drone Build Status](https://droneci.bdrobinson.com/api/badges/bdrobinson/sendbirdclient/status.svg)](https://droneci.bdrobinson.com/bdrobinson/sendbirdclient)
+[![Go Report Card](https://goreportcard.com/badge/github.com/bdrobinson/sendbirdclient)](https://goreportcard.com/report/github.com/bdrobinson/sendbirdclient)
 
 ## Features
 
@@ -23,7 +23,7 @@ This library provides wrapper functions for Sendbird Platform API written in Gol
 To install SendbirdClient for Golang, please execute the following `go get` command.
 
 ```bash
-    go get github.com/blazingorb/sendbirdclient
+    go get github.com/bdrobinson/sendbirdclient
 ``` 
 
 ## Usage

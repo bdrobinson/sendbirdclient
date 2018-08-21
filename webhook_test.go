@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	. "github.com/blazingorb/sendbirdclient"
+	. "github.com/bdrobinson/sendbirdclient"
 )
 
 var TestRow1 = []byte(`{"sdk": "JavaScript", "type": "MESG", "app_id": "11D3F84B-6C8E-4F39-B96B-9743C7820C53", "sender": {"user_id": "TestAdmin1", "metadata": {}, "nickname": "TestAdmin1", "profile_url": ""}, "channel": {"data": "", "name": "private_TestAdmin1_Test1", "channel_url": "sendbird_group_channel_55246620_2e5e5d73799da93c9cbd1df51e4a6d446c2c659c", "custom_type": "", "is_distinct": true}, "payload": {"data": "", "message": "Hello World", "created_at": 1514431258467, "message_id": 1287670462, "custom_type": "", "translations": {}}, "category": "group_channel:message_send", "custom_type": ""}`)

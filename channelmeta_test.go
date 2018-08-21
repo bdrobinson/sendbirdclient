@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	. "github.com/blazingorb/sendbirdclient"
+	. "github.com/bdrobinson/sendbirdclient"
 )
 
 const (

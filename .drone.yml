@@ -1,6 +1,6 @@
 workspace:
   base: /go
-  path: src/github.com/blazingorb/sendbirdclient
+  path: src/github.com/bdrobinson/sendbirdclient
 
 pipeline:
 

@@ -3,7 +3,7 @@ package sendbirdclient_test
 import (
 	"os"
 
-	. "github.com/blazingorb/sendbirdclient"
+	. "github.com/bdrobinson/sendbirdclient"
 )
 
 const (

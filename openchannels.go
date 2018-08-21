@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/url"
 
-	"github.com/blazingorb/sendbirdclient/templates"
+	"github.com/bdrobinson/sendbirdclient/templates"
 )
 
 type OpenChannel struct {
