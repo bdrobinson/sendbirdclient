@@ -3,6 +3,7 @@ package sendbirdclient
 import (
 	"errors"
 	"net/url"
+	"strconv"
 	"strings"
 
 	"github.com/bdrobinson/sendbirdclient/templates"
@@ -83,7 +84,7 @@ func (r *ListUsersRequest) params() url.Values {
 	}
 
 	if r.Limit >= ListLimitLowerBound && r.Limit <= ListLimitUpperBound {
-		q.Set("limit", string(r.Limit))
+		q.Set("limit", strconv.Itoa(r.Limit))
 	}
 
 	if r.ActiveMode != "" {
@@ -252,7 +253,7 @@ func (r *ListBlockUsersRequest) params() url.Values {
 	}
 
 	if r.Limit >= ListLimitLowerBound && r.Limit <= ListLimitUpperBound {
-		q.Set("limit", string(r.Limit))
+		q.Set("limit", strconv.Itoa(r.Limit))
 	}
 
 	return q
@@ -313,7 +314,7 @@ func (r *ListBannedChannelsRequest) params() url.Values {
 	}
 
 	if r.Limit >= ListLimitLowerBound && r.Limit <= ListLimitUpperBound {
-		q.Set("limit", string(r.Limit))
+		q.Set("limit", strconv.Itoa(r.Limit))
 	}
 
 	return q
@@ -361,7 +362,7 @@ func (r *ListMutedChannelsRequest) params() url.Values {
 	}
 
 	if r.Limit >= ListLimitLowerBound && r.Limit <= ListLimitUpperBound {
-		q.Set("limit", string(r.Limit))
+		q.Set("limit", strconv.Itoa(r.Limit))
 	}
 
 	return q
@@ -424,7 +425,7 @@ func (r *ListMyGroupChannelsRequest) params() url.Values {
 	}
 
 	if r.Limit >= ListLimitLowerBound && r.Limit <= ListLimitUpperBound {
-		q.Set("limit", string(r.Limit))
+		q.Set("limit", strconv.Itoa(r.Limit))
 	}
 
 	if r.ShowEmpty {

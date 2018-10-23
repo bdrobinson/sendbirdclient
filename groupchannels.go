@@ -3,6 +3,7 @@ package sendbirdclient
 import (
 	"errors"
 	"net/url"
+	"strconv"
 	"strings"
 
 	"github.com/bdrobinson/sendbirdclient/templates"
@@ -83,7 +84,7 @@ func (r *ListGroupChannelsRequest) params() url.Values {
 	}
 
 	if r.Limit >= ListLimitLowerBound && r.Limit <= ListLimitUpperBound {
-		q.Set("limit", string(r.Limit))
+		q.Set("limit", strconv.Itoa(r.Limit))
 	}
 
 	if r.ShowMember {
@@ -270,7 +271,7 @@ func (r *ListMembersInGroupChannelRequest) params() url.Values {
 	}
 
 	if r.Limit >= 1 && r.Limit <= 100 {
-		q.Set("limit", string(r.Limit))
+		q.Set("limit", strconv.Itoa(r.Limit))
 	}
 
 	return q
