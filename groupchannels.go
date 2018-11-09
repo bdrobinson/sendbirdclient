@@ -42,6 +42,7 @@ func (c *Client) CreateAGroupChannelWithURL(r *CreateAGroupChannelWithURLRequest
 
 type CreateAGroupChannelWithURLRequest struct {
 	Name       string   `json:"name,omitempty"`
+	ChannelURL string   `json:"channel_url,omitempty"`
 	CoverURL   string   `json:"cover_url,omitempty"`
 	CustomType string   `json:"custom_type,omitempty"`
 	Data       string   `json:"data,omitempty"`
