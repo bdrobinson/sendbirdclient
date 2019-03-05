@@ -21,8 +21,11 @@ type GroupChannel struct {
 }
 
 type LastMessage struct {
-	CreatedAt int64 `json:"created_at"`
-	User      User  `json:"user"`
+	CreatedAt int64  `json:"created_at"`
+	User      User   `json:"user"`
+	MessageID int64  `json:"message_id"`
+	Message   string `json:"message"`
+	Data      string `json:"data"`
 }
 
 type groupChannelsTemplateData struct {
