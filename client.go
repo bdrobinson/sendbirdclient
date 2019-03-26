@@ -122,6 +122,7 @@ func (c *Client) put(config *url.URL, apiReq interface{}) (*http.Response, error
 	if err != nil {
 		return nil, err
 	}
+	fmt.Println(fmt.Sprintf("put(): url=%s requestBody=%s", config.String(), string(body)))
 
 	c.prepareHeader(req)
 
