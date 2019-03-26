@@ -46,7 +46,7 @@ type CreateAUserWithURLRequest struct {
 	UserID           string `json:"user_id"`
 	NickName         string `json:"nickname"`
 	ProfileURL       string `json:"profile_url"`
-	IssueAccessToken bool   `json:"issue_access_token,omitempty"`
+	IssueAccessToken *bool  `json:"issue_access_token,omitempty"`
 }
 
 func (c *Client) CreateAUserWithFile(r *CreateAUserWithFileRequest) (User, error) {
@@ -57,7 +57,7 @@ type CreateAUserWithFileRequest struct {
 	UserID           string `json:"user_id"`
 	NickName         string `json:"nickname"`
 	ProfileFile      string `json:"profile_file"`
-	IssueAccessToken bool   `json:"issue_access_token,omitempty"`
+	IssueAccessToken *bool  `json:"issue_access_token,omitempty"`
 }
 
 func (c *Client) ListUsers(r *ListUsersRequest) (ListUsersResponse, error) {
@@ -91,7 +91,11 @@ func (r *ListUsersRequest) params() url.Values {
 		q.Set("active_mode", r.ActiveMode)
 	}
 
-	if r.ShowBot {
+	showBot := false
+	if r.ShowBot != nil {
+		showBot = *r.ShowBot
+	}
+	if showBot {
 		q.Set("show_bot", "true")
 	}
 
@@ -106,7 +110,7 @@ type ListUsersRequest struct {
 	Token      string   `json:"token,omitempty"`
 	Limit      int      `json:"limit,omitempty"`
 	ActiveMode string   `json:"active_mode,omitempty"`
-	ShowBot    bool     `json:"show_bot,omitempty"`
+	ShowBot    *bool    `json:"show_bot,omitempty"`
 	UserIDs    []string `json:"user_ids,omitempty"`
 }
 
@@ -133,11 +137,11 @@ func (c *Client) UpdateAUserWithURL(userID string, r *UpdateAUserWithURLRequest)
 }
 
 type UpdateAUserWithURLRequest struct {
-	NickName                string `json:"nickname,omitempty"`
-	ProfileURL              string `json:"profile_url,omitempty"`
-	IssueAccessToken        bool   `json:"issue_access_token,omitempty"`
-	IsActive                bool   `json:"is_active,omitempty"`
-	LeaveAllWhenDeactivated bool   `json:"leave_all_when_deactivated,omitempty"`
+	NickName                *string `json:"nickname,omitempty"`
+	ProfileURL              *string `json:"profile_url,omitempty"`
+	IssueAccessToken        *bool   `json:"issue_access_token,omitempty"`
+	IsActive                *bool   `json:"is_active,omitempty"`
+	LeaveAllWhenDeactivated *bool   `json:"leave_all_when_deactivated,omitempty"`
 }
 
 func (c *Client) UpdateAUserWithFile(userID string, r *UpdateAUserWithFileRequest) (User, error) {
@@ -145,11 +149,11 @@ func (c *Client) UpdateAUserWithFile(userID string, r *UpdateAUserWithFileReques
 }
 
 type UpdateAUserWithFileRequest struct {
-	NickName                string `json:"nickname,omitempty"`
-	ProfileFile             string `json:"profile_file,omitempty"`
-	IssueAccessToken        bool   `json:"issue_access_token,omitempty"`
-	IsActive                bool   `json:"is_active,omitempty"`
-	LeaveAllWhenDeactivated bool   `json:"leave_all_when_deactivated,omitempty"`
+	NickName                *string `json:"nickname,omitempty"`
+	ProfileFile             *string `json:"profile_file,omitempty"`
+	IssueAccessToken        *bool   `json:"issue_access_token,omitempty"`
+	IsActive                *bool   `json:"is_active,omitempty"`
+	LeaveAllWhenDeactivated *bool   `json:"leave_all_when_deactivated,omitempty"`
 }
 
 func (c *Client) ViewAUser(userID string) (User, error) {
@@ -635,12 +639,12 @@ func (c *Client) UpdatePushPerferences(userID string, r *UpdatePushPerferencesRe
 }
 
 type UpdatePushPerferencesRequest struct {
-	DoNotDisturb bool   `json:"do_not_disturb,omitempty"`
-	StartHour    int    `json:"start_hour,omitempty"`
-	StartMin     int    `json:"start_min,omitempty"`
-	EndHour      int    `json:"end_hour,omitempty"`
-	EndMin       int    `json:"end_min,omitempty"`
-	TimeZone     string `json:"timezone,omitempty"`
+	DoNotDisturb *bool   `json:"do_not_disturb,omitempty"`
+	StartHour    *int    `json:"start_hour,omitempty"`
+	StartMin     *int    `json:"start_min,omitempty"`
+	EndHour      *int    `json:"end_hour,omitempty"`
+	EndMin       *int    `json:"end_min,omitempty"`
+	TimeZone     *string `json:"timezone,omitempty"`
 }
 
 type UpdatePushPerferencesResponse struct {
